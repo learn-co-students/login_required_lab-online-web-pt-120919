@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
   end
   protect_from_forgery with: :exception
 
-  private 
-  def require_log_in
-    redirect_to '/login' unless current_user
-  end
+ 
+  
 end

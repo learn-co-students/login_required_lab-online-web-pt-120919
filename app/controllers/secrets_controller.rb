@@ -6,5 +6,10 @@ class SecretsController < ApplicationController
     def show
        
     end
+    
+    private
+    def require_log_in
+        redirect_to '/login' unless current_user
+      end
 
 end
