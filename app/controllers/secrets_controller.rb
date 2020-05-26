@@ -6,7 +6,7 @@ class SecretsController < ApplicationController
 
     def show
         if current_user
-            render :index
+            render :show
           else
             redirect_to '/login'
           end
@@ -14,6 +14,6 @@ class SecretsController < ApplicationController
 
     private 
    def require_login
-    return head(:forbidden) unless session.include? :name
+    redirect_to '/login' unless current_user
     end
 end
